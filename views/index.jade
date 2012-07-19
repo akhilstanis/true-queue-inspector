@@ -1,0 +1,77 @@
+!!!
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          .brand TrueQueue Inspector
+          ul.nav.pull-right
+            li
+              a.back(href='#') Back to Queue List
+
+    .row
+      #app-container.span12
+
+        #home
+          p.queue-name Queue List
+          #queue-list
+
+        #queue-view
+
+
+    script(type='text/x-handlebars-template', id='peek-view-template')
+      .well.form-search
+        | Get&nbsp;
+        input.search-query(type='text',id='size')
+        |  items from the queue&nbsp;
+        button.btn.btn-primary(type='button',id='btn-get') Go!
+      #results
+
+    script(type='text/x-handlebars-template', id='peek-view-results-template')
+      table.table.table-bordered.queue-items
+        thead
+          tr
+            th.id ID
+            th.data Data
+            th.metadata Metadata
+        tbody {{#each items}}
+          tr
+            td {{id}}
+            td.data {{data}}
+            td.metadata {{metadata}}
+          {{/each}}
+
+
+    script(type='text/x-handlebars-template', id='stats-view-template')
+      p.queue-name {{name}}
+        #stats
+          .stat.currentLength
+            p.title Queue Length
+            p.value {{currentLength}}
+            p.sub-text items
+
+          .stat.pushRate
+            p.title Enqueue Rate
+            p.value {{pushRate}}
+            p.sub-text items/sec
+
+          .stat.dequeueRate
+            p.title Dequeue Rate
+            p.value {{dequeueRate}}
+            p.sub-text items/sec
+
+
+    script(src='/javascripts/jquery-1.7.2.min.js')
+    script(src='/javascripts/jquery-ui-1.8.21.custom.min.js')
+    script(src="/bootstrap/js/bootstrap.min.js")
+    script(src='/nowjs/now.js')
+    script(src='/javascripts/underscore.js')
+    script(src='/javascripts/backbone.js')
+    script(src='/javascripts/handlebars-1.0.0.beta.6.js')
+    script(src='/javascripts/highcharts/highcharts.js')
+    script(src='/javascripts/script.js')

@@ -1,0 +1,65 @@
+#app-container {
+  margin: 0 auto;
+  float: none;
+  margin-top: 60px;
+}
+p.queue-name {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 100;
+  border-bottom: #eee 1px solid;
+  padding-bottom: 10px;
+}
+#stats { text-align:center; }
+.stat {
+  width: 125px;
+  border: #ccc 1px solid;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px 10px 0px 10px;
+  display: inline-block;
+  margin: 10px;
+  background-image: -webkit-linear-gradient(top, #ffffff, #f5f5f5);
+}
+.active { background-image: -webkit-linear-gradient(top, #f5f5f5, #ffffff); box-shadow: #08C 0px 0px 5px; }
+.stat p.title {
+ color: #555;
+ font-size: 15px;
+ margin-bottom: 13px;
+}
+.stat p.value {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.stat p.sub-text {
+  color: #555;
+}
+.graph-container {
+  width: 313px;
+  height: 300px;
+  display: inline-block;
+}
+#peek-view { margin-top: 10px; }
+.search-query { width: 30px; text-align: center; }
+th.id { width: 75px; }
+th.metadata { width: 200px; }
+table.queue-items td { font-family: 'Monaco', 'Courier New'; font-size: 12px; }
+
+.queue-title {
+  transition: border-color 1s;
+  -moz-transition: border-color 1s; /* Firefox 4 */
+  -webkit-transition: border-color 1s; /* Safari and Chrome */
+  -o-transition: border-color 1s; /* Opera */
+  border: #DDD 1px solid;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  background: -webkit-linear-gradient(top,white,whiteSmoke);
+  background-color: #FBFBFB;
+  text-align: left;
+}
+
+.queue-title:hover {   border-color: #ccc; /*background: -webkit-linear-gradient(top,whiteSmoke,white);*/ }
+
+#home { display: none; }
